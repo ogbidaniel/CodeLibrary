@@ -7,27 +7,24 @@ using namespace std;
 class Solution {
 public:
     vector<int> twosum(vector<int>& nums, int target) {
+
+        // declare the key variables for parsing array and getting output
         int arrLen = nums.size();
         int i;
-        int j;
-        vector<int> output;
+        vector<int> output (2);
+
+        unordered_map< int, int > num_map;
+
         for ( i = 0; i < arrLen; i++ )
         {
-            // declare second pointer and inner loop
-            for ( j = arrLen - 1; j != i; j-- )
+            // calculate the complement of each array in the array
+            int complement = target - nums [ i ];
+            if ( num_map.find( complement ) != num_map.end() )
             {
-                if ( nums [ i ] + nums [ j ] == target )
-                {
-                    output.resize ( 2 );
-                    output [ 0 ] = i;
-                    output [ 1 ] = j;
-                    return  output;
-                }
-                else 
-                {
-                    continue;
-                }
+                output [ 0 ] = i;                                   
+                output [ 1 ] = num_map [ complement ];              
             }
+            num_map [ nums [ i ] ] = i;                             // num_map [ value ] = index;
         }
         return output;
     }
