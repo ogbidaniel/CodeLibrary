@@ -7,7 +7,11 @@ class Solution {
 public:
     string longestCommonPrefix(vector<string>& strs) {
         // Your code goes here
-        for ( int i = 0; i < strs.size(); i++)
+        int strsSize = strs.size();
+        
+        for ( int i = 0; i < strs.size(); i++){
+            cout << strs[i];
+        }
     }
 };
 
