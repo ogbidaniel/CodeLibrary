@@ -8,10 +8,17 @@ public:
     string longestCommonPrefix(vector<string>& strs) {
         // Your code goes here
         int strsSize = strs.size();
-        
-        for ( int i = 0; i < strs.size(); i++){
-            cout << strs[i];
+        string prefix = "";
+        for ( int i = 0; i < strs[0].length(); i++){
+            char currentChar = strs[0][i];
+            for ( int j = 0; j < strs.size(); j++){
+                if (strs[j][i] != currentChar){
+                    return prefix;
+                }
+            }
+            prefix += currentChar;
         }
+        return prefix;
     }
 };
 
