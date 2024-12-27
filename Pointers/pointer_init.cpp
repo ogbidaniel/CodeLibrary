@@ -6,17 +6,25 @@
 
 int main()
 {
+    // Declare and initialize a pointer
     int* ptr = nullptr;
 
+    // Check if the pointer is null
     if (ptr == nullptr)
     {
-        std::cout << "Null Pointer. Undefined behaviour\n";
+        std::cout << "Pointer is null; no value to dereference.\n";
+
+        // Initialize pointer to a valid memory address
+        int value = 42;
+        ptr = &value;
+        std::cout << "Pointer initialized to address of value: " << *ptr << std::endl;
     }
-    else 
+    else
     {
         std::cout << *ptr << std::endl;
     }
 
-    system("Pause");
+    // Pause for input before exiting
+    std::cin.get();
     return 0;
 }
