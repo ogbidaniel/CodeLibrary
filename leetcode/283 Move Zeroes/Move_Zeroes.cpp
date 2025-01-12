@@ -29,6 +29,7 @@ public:
             // Process the current element
             if (nums[right] != 0) {
                 swap(nums[left], nums[right]);
+                cout << "Swap!\n\n";
                 left++;
             }
             right++;
@@ -52,6 +53,6 @@ int main() {
         cout << num << " ";
     }
     cout << endl;
-
+    cin.get();
     return 0;
 }
